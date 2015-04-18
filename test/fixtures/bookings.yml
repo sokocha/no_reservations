@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  restaurant_id: 1
+  date: 2015-04-16
+  starttime: 2015-04-16 10:42:28
+  endtime: 2015-04-16 10:42:28
+  party: 1
+  status: MyString
+
+two:
+  description: MyText
+  restaurant_id: 1
+  date: 2015-04-16
+  starttime: 2015-04-16 10:42:28
+  endtime: 2015-04-16 10:42:28
+  party: 1
+  status: MyString

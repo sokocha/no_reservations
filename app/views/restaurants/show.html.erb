@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= link_to @restaurant.category.name, category_path(@restaurant.category)  %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+
+<p>
+  <%= image_tag @restaurant.restaurant_image.url %>
+</p>
+
+
+
+<p>
+  <strong>Restaurateur:</strong>
+ <%= link_to @restaurant.restaurateur.user.username, user_path(@restaurant.restaurateur.user)   %>
+</p>
+
+
+<% if can? :create, Booking %>
+  <%= form_for Booking.new do |booking_form|%>
+  
+    <%= booking_form.label :date %><br>
+    <%= booking_form.date_select :date %><br>
+
+    <%= booking_form.label :starttime, "Start Time" %><br>
+    <%= booking_form.time_select :starttime %><br>
+
+    <%= booking_form.label :endtime, "End Time" %><br>
+    <%= booking_form.time_select :endtime %><br>
+
+    <%= booking_form.label :party, "Part Size" %><br>
+    <%= booking_form.number_field :party %><br>
+
+    <%= booking_form.label :description %><br>
+    <%= booking_form.text_area :description, :placeholder => 'List any allergies, or special requests' %><br>
+
+
+    <%= booking_form.hidden_field :restaurant_id, :value => @restaurant.id %>
+    <%= booking_form.hidden_field :user_id, :value => current_user.id %>
+
+    <div class="actions">
+      <%= booking_form.submit %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if can? :update, Restaurant %>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+<% end %>
+
+

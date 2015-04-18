@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chef</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <%= image_tag @user.user_image.url %>
+</p>
+
+<% if can? :read, Booking %>
+  <%= link_to 'Edit', edit_user_path(@user) %> 
+<% end %>
+
+
+
+
+<% if @user.restaurateur %>
+  <table>
+    <thead>
+      <tr>
+        <th>My Restaurants</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @user.try(:restaurateur).try(:restaurants).each do |restaurant| %>
+      <tr>
+        <td> <%= link_to restaurant.name, restaurant_path(restaurant)  %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if can? :manage, Booking %>
+  <% if @user.bookings.exists? %>
+    <table>
+      <h3>My Bookings</h3>
+      <thead>
+        <tr>
+          <th>Restaurant</th>
+          <th>Party Size</th>
+          <th>Start Time</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @user.bookings.each do |booking| %>
+        <tr>
+          <td> <%= link_to booking.restaurant.name, booking_path(booking) %></td>
+          <td> <%= booking.party %> </td>
+          <td> <%= booking.starttime %> </td>
+          <td> <%= booking.status %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>
+
+  
+
+
+
+
+

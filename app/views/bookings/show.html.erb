@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @booking.description %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= link_to @booking.restaurant.name,  restaurant_path(@booking.restaurant)%>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @booking.date %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @booking.starttime %>
+</p>
+
+<p>
+  <strong>Endtime:</strong>
+  <%= @booking.endtime %>
+</p>
+
+<p>
+  <strong>Party:</strong>
+  <%= @booking.party %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @booking.status %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %>| <%= link_to 'Destroy', @booking, method: :delete, data: { confirm: 'Are you sure?' } %>
+

@@ -1,0 +1,50 @@
+<%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+      <%= f.label :restaurant_image, "Upload an image" %><br/>
+      <%= f.file_field :restaurant_image %>
+  </div>
+  <div class="field">
+    <%= f.label :remote_restaurant_image_url, "Or enter a URL" %>
+    <%= f.text_field :remote_restaurant_image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id, "Select Cuisine Type" %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :restaurateur_id, :value => current_user.try(:restaurateur).id %><br>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
