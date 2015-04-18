@@ -1,12 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<% if current_user && current_user.try(:restaurateur) == nil %>
-  <%= link_to 'Become a Restauratuer', new_restaurateur_path  %> 
-<% end %>
 
-<% if current_user.try(:restaurateur) %>
-  <%= link_to 'Add a Restaurant', new_restaurant_path %>
-<% end %>
+
 
 <h1>Restaurants</h1>
 
