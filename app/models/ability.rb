@@ -24,9 +24,9 @@ class Ability
         end
 
         
-        # can :manage, User do |u|
-        #     u == user
-        # end
+        can :manage, User do |u|
+            u == user
+        end
         
 
         can :manage, Restaurateur do |r|

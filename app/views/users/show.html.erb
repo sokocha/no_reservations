@@ -9,7 +9,7 @@
   <%= image_tag @user.user_image.url %>
 </p>
 
-<% if can? :read, Booking %>
+<% if can? :manage, User %>
   <%= link_to 'Edit', edit_user_path(@user) %> 
 <% end %>
 
