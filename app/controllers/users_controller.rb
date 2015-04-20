@@ -6,14 +6,15 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   # GET /users/1
   # GET /users/1.json
   def show
     @bookings = @user.bookings
+    @restaurants = @user.try(:restaurateur).try(:restaurants)
   end
 
   # GET /users/new

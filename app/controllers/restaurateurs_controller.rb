@@ -5,15 +5,15 @@ class RestaurateursController < ApplicationController
 
   # GET /restaurateurs
   # GET /restaurateurs.json
-  def index
-    @restaurateurs = Restaurateur.all
-  end
+  # def index
+  #   @restaurateurs = Restaurateur.all
+  # end
 
   # GET /restaurateurs/1
   # GET /restaurateurs/1.json
-  def show
-    @restaurants = @restaurateur.restaurants
-  end
+  # def show
+  #   @restaurants = @restaurateur.restaurants
+  # end
 
   # GET /restaurateurs/new
   def new
