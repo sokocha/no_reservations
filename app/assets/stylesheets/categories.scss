@@ -3,20 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  
-div#image{
-  float: left;
-  max-width: 30%
+div#cuisine_container{
+  max-width:90%;
+
+  h1#cuisine{
+    margin: 0 auto;
+    max-width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+
 }
 
-div#quote p{
-  float: right;
-  font-size: 3em;
-  line-height: 2em;
-  max-width: 63%;
-  color: #A92159;
-  font-family: 'Gloria Hallelujah', cursive;
+
+div.country_container{
+  
+  max-width:90%;
+  margin: 0 auto;
+
+  div#image{
+    float: left;
+    max-width: 30%
+  }
+
+  div#quote p{
+    float: right;
+    font-size: 3em;
+    line-height: 2em;
+    max-width: 63%;
+    color: #A92159;
+    font-family: 'Gloria Hallelujah', cursive;
+  }
+
 }
+
 
 table{
   
