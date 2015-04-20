@@ -38,24 +38,22 @@
 <% if can? :create, Booking %>
   <%= form_for Booking.new do |booking_form|%>
   
-    <%= booking_form.label :date %><br>
-    <%= booking_form.date_select :date %><br>
+    <%= booking_form.label :date %><br><br>
+    <%= booking_form.date_select :date %><br><br>
 
     <%= booking_form.label :starttime, "Start Time" %><br>
-    <%= booking_form.time_select :starttime %><br>
+    <%= booking_form.time_select :starttime %><br><br>
 
     <%= booking_form.label :endtime, "End Time" %><br>
-    <%= booking_form.time_select :endtime %><br>
-
-    <%= booking_form.label :party, "Part Size" %><br>
-    <%= booking_form.number_field :party, autofocus: true, required: true  %><br>
-
-    <%= booking_form.label :description %><br>
+    <%= booking_form.time_select :endtime %><br><br>
+    
+    <%= booking_form.number_field :party, autofocus: true, required: true, :placeholder => "Party Size"  %><br><br>
+    
     <%= booking_form.text_area :description, autofocus: true, :placeholder => 'List any allergies, or special requests' %><br>
 
 
     <%= booking_form.hidden_field :restaurant_id, :value => @restaurant.id %>
-    <%= booking_form.hidden_field :user_id, :value => current_user.id %>
+    <%= booking_form.hidden_field :user_id, :value => current_user.id %><br>
 
     <div class="actions">
       <%= booking_form.submit %>
