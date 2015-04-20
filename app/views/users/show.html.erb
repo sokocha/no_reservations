@@ -1,17 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 
+<div id = "user_container">
+  <div id="user_image">
+  <%= image_tag(@user.user_image.thumb.url ) %>
+  </div>
+  
 
-<div id="user_image">
-<%= image_tag(@user.user_image.thumb.url ) %>
 </div>
 
-<p id ="username">
-  <%= @user.username %>
-</p>
-
 <% if can? :manage, User %>
-  <%= link_to 'Edit', edit_user_path(@user) %> 
+  <%= link_to 'Edit', edit_user_path(@user), :id => "user_edit" %> 
 <% end %>
 
 
