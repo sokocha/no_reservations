@@ -48,10 +48,10 @@
     <%= booking_form.time_select :endtime %><br>
 
     <%= booking_form.label :party, "Part Size" %><br>
-    <%= booking_form.number_field :party %><br>
+    <%= booking_form.number_field :party, autofocus: true, required: true  %><br>
 
     <%= booking_form.label :description %><br>
-    <%= booking_form.text_area :description, :placeholder => 'List any allergies, or special requests' %><br>
+    <%= booking_form.text_area :description, autofocus: true, :placeholder => 'List any allergies, or special requests' %><br>
 
 
     <%= booking_form.hidden_field :restaurant_id, :value => @restaurant.id %>
@@ -66,5 +66,12 @@
 <% if can? :update, Restaurant %>
   <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
 <% end %>
+
+
+
+
+
+
+
 
 

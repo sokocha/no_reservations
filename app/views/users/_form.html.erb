@@ -12,16 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, required: true, :placeholder => "Enter Username" %>
   </div>
   <div class="field">
-      <%= f.label :user_image, "Upload an Avatar" %><br />
-      <%= f.file_field :user_image %>
+      <%= f.file_field :user_image, :placeholder => "Upload an Avatar" %>
   </div>
   <div class="field">
-    <%= f.label :remote_user_image_url, "..or a URL will do too!" %><br>
-    <%= f.text_field :remote_user_image_url %>
+    <%= f.text_field :remote_user_image_url, :placeholder => "..or a URL will do too!"  %>
   </div>
   <div class="actions">
     <%= f.submit %>
