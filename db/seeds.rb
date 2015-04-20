@@ -16,19 +16,19 @@ Restaurant.delete_all
 User.delete_all
 
 
-admin = User.create(username: 'okochito', role: 'admin', email: 'admin@gmail.com', password: 'password')
+admin = User.create(username: 'okochito', role: 'admin', email: 'admin@gmail.com', password: 'password', remote_user_image_url:'http://www.placecage.com/g/200/300')
 
-user1 = User.create(username: 'chefo', email: 'user1@gmail.com', password: 'password')
+user1 = User.create(username: 'chefo', email: 'user1@gmail.com', password: 'password', remote_user_image_url: 'http://www.placecage.com/c/200/300')
 
-user2 = User.create(username: 'curryGod', email: 'user2@gmail.com', password: 'password')
+user2 = User.create(username: 'curryGod', email: 'user2@gmail.com', password: 'password', remote_user_image_url: 'http://www.stevensegallery.com/200/300')
 
-user3 = User.create(username: 'SkinnyChef', email: 'user3@gmail.com', password: 'password')
+user3 = User.create(username: 'SkinnyChef', email: 'user3@gmail.com', password: 'password', remote_user_image_url: 'http://www.placecage.com/200/300')
 
-user4 = User.create(username: 'Garlic+Onions', email: 'user4@gmail.com', password: 'password')
+user4 = User.create(username: 'Garlic+Onions', email: 'user4@gmail.com', password: 'password', remote_user_image_url:'http://lorempixel.com/400/200/sports/1/')
 
-user5 = User.create(username: 'Lola', email: 'user5@gmail.com', password: 'password')
+user5 = User.create(username: 'Lola', email: 'user5@gmail.com', password: 'password', remote_user_image_url: 'http://lorempixel.com/400/200/sports/')
 
-user6 = User.create(username: 'Zed', email: 'user6@gmail.com', password: 'password')
+user6 = User.create(username: 'Zed', email: 'user6@gmail.com', password: 'password', remote_user_image_url: 'http://lorempixel.com/400/200/sports/Dummy-Text/')
 
 
 admin_restaurateur = Restaurateur.create!(user_id: admin.id)

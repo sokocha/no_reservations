@@ -97,6 +97,8 @@ header.navigation {
     width: 100%;
     z-index: 9999;
 
+
+
     @include media ($horizontal-bar-mode) {
       background: transparent;
       display: inline;
@@ -110,7 +112,8 @@ header.navigation {
       display: inline-block;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.3em;
+      font-family: 'Josefin Sans', sans-serif;
 
       @include media ($horizontal-bar-mode) {
         padding-right: 1em;

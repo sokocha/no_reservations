@@ -15,7 +15,7 @@
   $table-border: 1px solid $table-border-color;
   $table-background: $base-background-color;
   $table-header-background: lighten($table-background, 10);
-  $table-hover-background: darken($table-background, 2);
+  $table-hover-background: $logo-color;
   $table-stripe-background: darken($table-background, 4);
   $table-stripe-background-hover: darken($table-stripe-background, 5);
   $table-padding: .75em 1em;
@@ -26,7 +26,7 @@
 
   tbody {
     tr:hover > td, tr:hover > th {
-      background-color: $logo-color;
+      background-color: $table-hover-background;
     }
     tr:first-child td {
       border-top: 2px solid $table-border-color;

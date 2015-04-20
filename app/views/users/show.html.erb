@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Chef</strong>
+
+
+<div id="user_image">
+<%= image_tag(@user.user_image.thumb.url ) %>
+</div>
+
+<p id ="username">
   <%= @user.username %>
 </p>
-
-<div id="image">
-<%= link_to image_tag(@user.user_image.thumb.url), @user.user_image.detail.url%>
-</div>
 
 <% if can? :manage, User %>
   <%= link_to 'Edit', edit_user_path(@user) %> 

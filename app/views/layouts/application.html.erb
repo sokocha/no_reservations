@@ -20,9 +20,9 @@
         <ul id="js-navigation-menu" class="navigation-menu show">
           <li class="nav-link" id="cursive_logo">
             <% if current_user %>
-            <%= link_to 'No Reservations', current_user %>
+            <%= link_to 'No Reservations?', current_user %>
             <% else %>
-            <%= link_to 'No Reservations', categories_path  %>
+            <%= link_to 'No Reservations?', categories_path  %>
             <% end %>
           </li>
             <% if current_user %>

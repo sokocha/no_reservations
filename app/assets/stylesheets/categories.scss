@@ -18,8 +18,19 @@ div#quote p{
   font-family: 'Gloria Hallelujah', cursive;
 }
 
-td {
-  font-size: 1.5em;
+table{
+  
+  th{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  td {
+    font-size: 1.5em;
+  }
+
 }
+
+
 
 }
