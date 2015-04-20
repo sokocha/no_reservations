@@ -26,7 +26,7 @@
 
   input:focus:valid ~ span:after,
   textfield:focus:valid ~ span:after {
-    content:"Thanks Master Chef!";
+    content:"Looks good amigo!";
   }
   textarea:focus:valid ~ span:after {
     content:"Write an essay if you desire :)";
