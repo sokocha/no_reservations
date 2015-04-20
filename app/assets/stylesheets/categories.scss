@@ -2,6 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html body table tbody tr td img.tiny_flag {
-  max-width: 10px;
+body{
+  
+div#image{
+  float: left;
+  max-width: 30%
+}
+
+div#quote p{
+  float: right;
+  font-size: 3em;
+  line-height: 2em;
+  max-width: 63%;
+  color: #A92159;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+td {
+  font-size: 1.5em;
+}
+
 }

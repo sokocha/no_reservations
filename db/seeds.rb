@@ -42,15 +42,15 @@ user6_restaurateur = Restaurateur.create!(user_id: user6.id)
 
 
 
-american = Category.create!(name: 'American', remote_category_image_url: 'http://flaglane.com/download/american-flag/american-flag-medium.jpg' );
-brazilian = Category.create!(name: 'Brazilian', remote_category_image_url: 'http://flaglane.com/download/brazilian-flag/brazilian-flag-medium.jpg');
-chinese = Category.create!(name:'Chinese', remote_category_image_url: 'http://flaglane.com/download/chinese-flag/chinese-flag-medium.jpg');
-french = Category.create!(name: 'French', remote_category_image_url: 'http://flaglane.com/download/french-flag/french-flag-medium.jpg');
-korean = Category.create!(name: 'Korean', remote_category_image_url: 'http://flaglane.com/download/south-korean-flag/south-korean-flag-medium.jpg');
-nigerian = Category.create!(name: 'Nigerian', remote_category_image_url: 'http://flaglane.com/download/nigerian-flag/nigerian-flag-medium.jpg');
-jamaican = Category.create!(name: 'Jamaican', remote_category_image_url: 'http://flaglane.com/download/jamaican-flag/jamaican-flag-medium.jpg');
-japanese = Category.create!(name: 'Japanese', remote_category_image_url: 'http://flaglane.com/download/japanese-flag/japanese-flag-medium.jpg');
-italian = Category.create!(name: 'Italian', remote_category_image_url: 'http://flaglane.com/download/italian-flag/italian-flag-medium.jpg');
+american = Category.create!(name: 'American', remote_category_image_url: 'http://flaglane.com/download/american-flag/american-flag-medium.jpg', quote: "I am proud to be an American. Because an American can eat anything on the face of this earth as long as he has two pieces of bread. - Bill Cosby" );
+brazilian = Category.create!(name: 'Brazilian', remote_category_image_url: 'http://flaglane.com/download/brazilian-flag/brazilian-flag-medium.jpg', quote: "A fome é o melhor tempero. Hunger is the best seasoning. - Unknown ");
+chinese = Category.create!(name:'Chinese', remote_category_image_url: 'http://flaglane.com/download/chinese-flag/chinese-flag-medium.jpg', quote: "Anything that walks, swims, crawls, or flies with its back to heaven is edible -Eileen Yin-Fei Lo");
+french = Category.create!(name: 'French', remote_category_image_url: 'http://flaglane.com/download/french-flag/french-flag-medium.jpg', quote: "Bouillabaisse is only good because cooked by the French, who, if they cared to try, could produce an excellent and nutritious substitute out of cigar stumps and empty matchboxes -Norman Douglas, British novelist (1868-1952)");
+korean = Category.create!(name: 'Korean', remote_category_image_url: 'http://flaglane.com/download/south-korean-flag/south-korean-flag-medium.jpg', quote: "I definitely love kimchi. The biggest influence that eating so much Korean food growing up had on me was that I have no limit for spiciness. The hotter the better. - Patrick Stump");
+nigerian = Category.create!(name: 'Nigerian', remote_category_image_url: 'http://flaglane.com/download/nigerian-flag/nigerian-flag-medium.jpg', quote: "Any man who drinks alomo bitters without squeezing up his face, is capable of murder - Obasanjo (1999)");
+jamaican = Category.create!(name: 'Jamaican', remote_category_image_url: 'http://flaglane.com/download/jamaican-flag/jamaican-flag-medium.jpg', quote: "I grew up with coconuts as the main flavor in food in Jamaica. It's part of our culture. - Ziggy Marley");
+japanese = Category.create!(name: 'Japanese', remote_category_image_url: 'http://flaglane.com/download/japanese-flag/japanese-flag-medium.jpg', quote: "Japan is the most intoxicating place for me. In Kyoto, there's an inn called the Tawaraya which is quite extraordinary. The Japanese culture fascinates me: the food, the dress, the manners and the traditions. It's the travel experience that has moved me the most. - Roman Coppola");
+italian = Category.create!(name: 'Italian', remote_category_image_url: 'http://flaglane.com/download/italian-flag/italian-flag-medium.jpg', quote: "Life is a combination of magic and pasta. - Federico Fellini");
 
 bogo_biri = Restaurant.create!(name: 'Bogo Biri' , description: "Traditional south-west Nigerian food" , category_id: nigerian.id , restaurateur_id: admin_restaurateur.id ,address: "9, Maitama Sule Street, Lagos");
 

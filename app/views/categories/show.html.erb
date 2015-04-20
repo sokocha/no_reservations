@@ -1,7 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h3> <%= @category.name  %></h3>
-<%= image_tag @category.category_image.url %>
+
+<div class ="country_container">
+  <div id = 'image'>
+  <%= image_tag @category.category_image.url %>
+  </div>
+  <div id = 'quote'>
+    <p>
+      <%= @category.quote %>
+    </p>
+  </div>
+</div>
+
+
 <% if @category.has_restaurants? %>
   <table class = "table-minimal">
     <thead>
@@ -35,6 +46,6 @@
 
 
 <%if can? :update, Category %>
-  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Edit', edit_category_path(@category) %> 
 <% end %>
 
