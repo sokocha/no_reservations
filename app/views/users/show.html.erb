@@ -34,7 +34,7 @@
   </table>
 <% end %>
 
-<% if can? :manage, Booking %>
+<% if can? :read, Booking %>
   <% if @user.bookings.exists? %>
     <table>
       <h3>My Bookings</h3>

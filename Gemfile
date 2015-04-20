@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
@@ -45,6 +45,7 @@ end
 
 gem 'rails_12factor', group: :production
 
+gem 'devise'
 
 group :development, :test do
   gem 'pry-rails'
@@ -59,3 +60,7 @@ gem 'cancancan'
 gem 'geocoder'
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'bourbon'
+gem 'neat'
+gem 'refills'

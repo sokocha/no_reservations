@@ -18,9 +18,17 @@ class Ability
         cannot :destroy, Category
         cannot :create, Category
         can :read, Category
+        
 
-        can :manage, Booking do |booking|
-            booking.user == user
+        can :create, Booking
+        can :read, Booking do |b|
+          b.user == user
+        end
+        can :destroy, Booking do |b|
+          b.user == user
+        end
+        can :update, Booking do |b|
+          b.user == user
         end
 
         
@@ -53,7 +61,6 @@ class Ability
         can :read, Restaurateur
         can :read, Category
         can :read, Restaurant
-        cannot :manage, Booking
         can :read, User
       end
    
