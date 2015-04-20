@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :users, except: [:index, :show]
+  resources :users, except: [:index]
 
   resources :restaurateurs, except: [:index, :show]
 

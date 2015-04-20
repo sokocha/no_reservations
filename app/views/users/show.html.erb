@@ -20,12 +20,12 @@
   <table>
     <thead>
       <tr>
-        <th>My Restaurants</th>
+        <th> <%= @user.username %>'s Restaurants</th>
       </tr>
     </thead>
   
     <tbody>
-      <% @user.try(:restaurateur).try(:restaurants).each do |restaurant| %>
+      <% @restaurants.each do |restaurant| %>
       <tr>
         <td> <%= link_to restaurant.name, restaurant_path(restaurant)  %> </td>
       </tr>
