@@ -42,15 +42,15 @@ user6_restaurateur = Restaurateur.create!(user_id: user6.id)
 
 
 
-american = Category.create!(name: 'American');
+american = Category.create!(name: 'American', remote_category_image_url: 'http://flaglane.com/download/american-flag/american-flag-medium.jpg' );
 brazilian = Category.create!(name: 'Brazilian');
-chinese = Category.create!(name:'Chinese');
-french = Category.create!(name: 'French');
-korean = Category.create!(name: 'Korean');
-nigerian = Category.create!(name: 'Nigerian');
-jamaican = Category.create!(name: 'Jamaican');
-japanese = Category.create!(name: 'Japanese');
-italian = Category.create!(name: 'Italian');
+chinese = Category.create!(name:'Chinese', remote_category_image_url: 'http://flaglane.com/download/chinese-flag/chinese-flag-medium.jpg');
+french = Category.create!(name: 'French', remote_category_image_url: 'http://flaglane.com/download/french-flag/french-flag-medium.jpg');
+korean = Category.create!(name: 'Korean', remote_category_image_url: 'http://flaglane.com/download/south-korean-flag/south-korean-flag-medium.jpg');
+nigerian = Category.create!(name: 'Nigerian', remote_category_image_url: 'http://flaglane.com/download/nigerian-flag/nigerian-flag-medium.jpg');
+jamaican = Category.create!(name: 'Jamaican', remote_category_image_url: 'http://flaglane.com/download/jamaican-flag/jamaican-flag-medium.jpg');
+japanese = Category.create!(name: 'Japanese', remote_category_image_url: 'http://flaglane.com/download/japanese-flag/japanese-flag-medium.jpg');
+italian = Category.create!(name: 'Italian', remote_category_image_url: 'http://flaglane.com/download/italian-flag/italian-flag-medium.jpg');
 
 bogo_biri = Restaurant.create!(name: 'Bogo Biri' , description: "Traditional south-west Nigerian food" , category_id: nigerian.id , restaurateur_id: admin_restaurateur.id ,address: "9, Maitama Sule Street, Lagos");
 

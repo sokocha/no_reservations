@@ -12,8 +12,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field required">
     <%= f.text_field :name, required: true, :placeholder => "Cuisine Type" %>
+  </div>
+  
+  <div class="field">
+  <%= f.file_field :category_image %>
   </div>
 
   <div class="actions">

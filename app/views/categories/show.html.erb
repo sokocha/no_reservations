@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h3> <%= @category.name  %></h3>
+<%= image_tag @category.category_image.url %>
 <% if @category.has_restaurants? %>
   <table class = "table-minimal">
     <thead>
