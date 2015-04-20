@@ -21,6 +21,7 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= link_to restaurant.name, restaurant_path(restaurant)  %></td>
+        <td><%=image_tag(restaurant.category.category_image.thumb.url)%></td>
         <td> <%= link_to restaurant.category.name , category_path(restaurant.category)  %> </td>
         <td><%= truncate(restaurant.description, :length => 65) %></td>
         <td><%= restaurant.distance_from(@result).round(2) %></td>

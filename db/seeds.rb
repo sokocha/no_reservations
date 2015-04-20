@@ -43,7 +43,7 @@ user6_restaurateur = Restaurateur.create!(user_id: user6.id)
 
 
 american = Category.create!(name: 'American', remote_category_image_url: 'http://flaglane.com/download/american-flag/american-flag-medium.jpg' );
-brazilian = Category.create!(name: 'Brazilian');
+brazilian = Category.create!(name: 'Brazilian', remote_category_image_url: 'http://flaglane.com/download/brazilian-flag/brazilian-flag-medium.jpg');
 chinese = Category.create!(name:'Chinese', remote_category_image_url: 'http://flaglane.com/download/chinese-flag/chinese-flag-medium.jpg');
 french = Category.create!(name: 'French', remote_category_image_url: 'http://flaglane.com/download/french-flag/french-flag-medium.jpg');
 korean = Category.create!(name: 'Korean', remote_category_image_url: 'http://flaglane.com/download/south-korean-flag/south-korean-flag-medium.jpg');
