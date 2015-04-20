@@ -5,9 +5,9 @@
   <%= @user.username %>
 </p>
 
-<p>
-  <%= image_tag @user.user_image.url %>
-</p>
+<div id="image">
+<%= link_to image_tag(@user.user_image.thumb.url), @user.user_image.detail.url%>
+</div>
 
 <% if can? :manage, User %>
   <%= link_to 'Edit', edit_user_path(@user) %> 

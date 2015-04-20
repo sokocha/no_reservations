@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
   <title>Bookatable</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,27 +11,56 @@
 </head>
 
 <body>
+
+  <header class="navigation" role="banner">
+    <div class="navigation-wrapper">
+     
+      <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+      <nav role="navigation">
+        <ul id="js-navigation-menu" class="navigation-menu show">
+          <li class="nav-link" id="cursive_logo"> 
+            <%= link_to 'No Reservations', current_user %>
+          </li>
+            <% if current_user %>
+            <li class="nav-link"> 
+             <%= link_to current_user.username, user_path(current_user)  %>
+             <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
+           </li>
+
+           <% if current_user.try(:restaurateur) %>
+             <li class="nav-link"> <%= link_to 'List my restaurant', new_restaurant_path %></li>
+           <% end %>
+
+           <% if current_user.restaurateur.nil? %>
+           <li class="nav-link"> <%= link_to 'Become a Restaurateur', new_restaurateur_path  %> </li>
+           <% end %>
+
+           <li class="nav-link">
+             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+           </li>
+    
+            <% else %>
+              <li class="nav-link">
+                <%= link_to "Sign In", new_user_session_path %>
+              </li>
+
+              <li class="nav-link">
+                <%= link_to "Register", new_user_registration_path %>
+              </li>
+            <% end %>
+            <li class="nav-link">
+              <%= link_to 'Browse by Category', categories_path  %>
+            </li>
+            <li class="nav-link">
+              <%= link_to 'All Restaurants', restaurants_path  %>
+            </li>
+
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
   
-  <div class='login'>
-     <% if current_user %>
-       <%= link_to current_user.username, user_path(current_user)  %>
-       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-       
-       <% if current_user.try(:restaurateur) %>
-         <%= link_to 'List my restaurant', new_restaurant_path %>
-       <% end %>
-
-       <% if current_user.restaurateur.nil? %>
-       <%= link_to 'Become a Restaurateur', new_restaurateur_path  %>
-       <% end %>
-
-     <% else %>
-       <%= link_to "Sign In", new_user_session_path %>
-       <%= link_to "Register", new_user_registration_path %>
-     <% end %>
-     <%= link_to 'Browse by Category', categories_path  %>
-     <%= link_to 'All Restaurants', restaurants_path  %>
-   </div>
 
 <%= yield %>
 

@@ -24,7 +24,7 @@
         <td> <%= link_to restaurant.category.name , category_path(restaurant.category)  %> </td>
         <td><%= truncate(restaurant.description, :length => 65) %></td>
         <td><%= restaurant.distance_from(@result).round(2) %></td>
-        <td><%= restaurant.restaurateur.user.email %></td>
+        <td><%= link_to restaurant.restaurateur.user.username, user_path(restaurant.restaurateur.user) %></td>
 
 
 

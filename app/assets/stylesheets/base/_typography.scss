@@ -31,11 +31,8 @@ h3 {
   font-size: $h3-font-size;
 }
 
-h3#cursive_logo{
-  font-family: 'Playball', cursive;
-  font-size: $base-font-size * 3.75;
-  margin-left: -800px;
-}
+
+
 
 h4 {
   font-size: $h4-font-size;
@@ -92,4 +89,7 @@ cite {
   &:before {
     content: "\2014 \00A0";
   }
+
+
+
 }
