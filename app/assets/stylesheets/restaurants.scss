@@ -2,42 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1#cuisine{
-  margin: 0 auto;
-  max-width: 100%;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#restaurant_container {
-  width: 60%;
-  margin: 0 auto;
-  color: black;
-  h1 {
+body{
+  
+  h1#cuisine{
+    margin: 0 auto;
+    max-width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 10em;
-  }
-}
-.required {
-  input:not([type="submit"]):valid:focus,
-  textarea:valid:focus {
-    box-shadow: 0 0 10px rgba(101, 169, 10, 0.8);
-    outline:0;
-  }
-  input:not([type="submit"]):invalid:focus,
-  textarea:invalid:focus {
-    box-shadow: 0 0 10px rgba(204, 63, 133, 0.8);
-    outline:none;
   }
 
-  input:focus:valid ~ span:after,
-  textfield:focus:valid ~ span:after {
-    content:"Looks good amigo!";
-  }
-  textarea:focus:valid ~ span:after {
-    content:"Write an essay if you desire :)";
+  #restaurant_container {
+    max-width: 60%;
+    margin: 0 auto;
+    color: black;
+    h1 {
+      text-align: center;
+      font-size: 10em;
+    } 
   }
 
+  div#restaurant_info {
+  max-width: 50em;
+  margin: 30px auto;
+  float: left;
+    p{
+      font-size: 2em;
+      line-height: 1.4em;
+      font-family:  'Josefin Sans', sans-serif;
+    }
+  }
+
+  div#booking_form{
+  max-width: 70%;
+  max-height: 50em;
+    float:right;
+    label{
+      font-size: 2em;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+  }
+  
+  .required {
+    input:not([type="submit"]):valid:focus,
+    textarea:valid:focus {
+      box-shadow: 0 0 10px rgba(101, 169, 10, 0.8);
+      outline:0;
+    }
+    input:not([type="submit"]):invalid:focus,
+    textarea:invalid:focus {
+      box-shadow: 0 0 10px rgba(204, 63, 133, 0.8);
+      outline:none;
+    }
+
+    input:focus:valid ~ span:after,
+    textfield:focus:valid ~ span:after {
+      content:"Looks good amigo!";
+    }
+    textarea:focus:valid ~ span:after {
+      content:"Write an essay if you desire :)";
+    }
+
+  }
 }
+
 
