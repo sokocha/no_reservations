@@ -24,9 +24,9 @@
       <%= @restaurant.address %>
     </p>
     
-    
+    <br>
     <p>
-      <%= image_tag @restaurant.restaurant_image.url %>
+      <%= image_tag(@restaurant.restaurant_image.detail.url ) %>
     </p>
   
     <% if can? :update, Restaurant %>
@@ -45,7 +45,7 @@
         <%= booking_form.text_field :date, :id => 'datepicker' %><br><br>
   
     
-        <%= booking_form.label :starttime, "Start Time" %><br>
+        <%= booking_form.label :starttime, "Start Time" %><br><br>
         <%= booking_form.time_select :starttime, :class => "start_time" %><br><br>
     
         </span>
