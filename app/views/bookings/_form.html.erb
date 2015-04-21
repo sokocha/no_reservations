@@ -20,14 +20,13 @@
   <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :starttime %><br>
-    <%= f.time_select :starttime %>
-  </div>
+
+  <%= f.label :date %><br><br>
+  <%= f.text_field :date, :id => 'datepicker' %><br><br>
+  
+  
+  <%= f.label :starttime, "Start Time" %><br><br>
+  <%= f.time_select :starttime, :class => "start_time" %><br><br>
   <div class="field">
     <%= f.number_field :party, required: true, :placeholder => "Size of dining party" %>
   </div>

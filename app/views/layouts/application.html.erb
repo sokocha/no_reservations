@@ -4,10 +4,10 @@
 <head>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
- 
+
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -15,12 +15,7 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   
     
-  <script>
-    jQuery(function($){
-        $( "#datepicker" ).datepicker();
-        $('input.timepicker').timepicker({});
-    });
-  </script>
+  
     
   <title>Bookatable</title>
 
@@ -42,22 +37,18 @@
             <% end %>
           </li>
             <% if current_user %>
-            <li class="nav-link"> 
-             <%= link_to current_user.username, user_path(current_user)  %>
-             <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
-           </li>
+              <li class="nav-link"> 
+                <%= link_to current_user.username, user_path(current_user)  %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
+              </li>
 
            <% if current_user.try(:restaurateur) %>
-             <li class="nav-link"> <%= link_to 'List my restaurant', new_restaurant_path %></li>
+             <li class="nav-link"> <%= link_to 'List Restaurant', new_restaurant_path %></li>
            <% end %>
 
            <% if current_user.restaurateur.nil? %>
-           <li class="nav-link"> <%= link_to 'Become a Restaurateur', new_restaurateur_path  %> </li>
+           <li class="nav-link"> <%= link_to 'Restaurateur?', new_restaurateur_path  %> </li>
            <% end %>
-
-           <li class="nav-link">
-             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-           </li>
     
             <% else %>
               <li class="nav-link">
@@ -65,17 +56,18 @@
               </li>
 
               <li class="nav-link">
-                <%= link_to "Register", new_user_registration_path %>
+                <%= link_to "Signup", new_user_registration_path %>
               </li>
             <% end %>
+
             <li class="nav-link">
-              <%= link_to 'Browse by Category', categories_path  %>
-            </li>
-            <li class="nav-link">
-              <%= link_to 'All Restaurants', restaurants_path  %>
+              <%= link_to 'All', restaurants_path  %>
             </li>
 
-          
+            <li class="nav-link">
+              <%= link_to 'Cuisines', categories_path  %>
+            </li>
+
         </ul>
       </nav>
     </div>
@@ -83,7 +75,11 @@
   
 
 <%= yield %>
-
+<script>
+  jQuery(function($){
+      $( "#datepicker" ).datepicker();
+  });
+</script>
 </body>
 
 

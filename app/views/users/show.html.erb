@@ -16,7 +16,7 @@
 
 
 
-<% if @user.restaurateur %>
+<% if @user.restaurateur.restaurants.any? %>
   <table class = "table-minimal">
     <thead>
       <tr>
@@ -50,10 +50,14 @@
       <tbody>
         <% @user.bookings.each do |booking| %>
         <tr>
-          <td> <%= link_to booking.restaurant.name, booking_path(booking) %></td>
+          <td> <%= link_to booking.restaurant.name, restaurant_path(booking.restaurant) %></td>
           <td> <%= booking.party %> </td>
           <td> <%= booking.starttime %> </td>
           <td> <%= booking.status %> </td>
+          <% if can? :destroy, booking %>
+            <td> <%= link_to 'Edit Booking', edit_booking_path(booking)  %></td>
+            <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
         <% end %>
       </tbody>
