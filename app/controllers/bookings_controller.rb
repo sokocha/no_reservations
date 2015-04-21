@@ -26,17 +26,17 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(booking_params)
+ @booking = Booking.new(booking_params)
 
-    respond_to do |format|
-      if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
-      else
-        format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
-      end
+  respond_to do |format|
+    if @booking.save
+      format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+      format.json { render :show, status: :created, location: @booking }
+    else
+      format.html { render :new }
+      format.json { render json: @booking.errors, status: :unprocessable_entity }
     end
+  end
     
   end
 
@@ -58,10 +58,11 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1.json
   def destroy
     @booking.destroy
-    respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to user_url, notice: 'Booking was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
+    redirect_to current_user
   end
 
   private

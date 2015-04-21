@@ -31,7 +31,7 @@ class RestaurateursController < ApplicationController
 
     respond_to do |format|
       if @restaurateur.save
-        format.html { redirect_to @restaurateur, notice: 'Restaurateur was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Restaurateur was successfully created.' }
         format.json { render :show, status: :created, location: @restaurateur }
       else
         format.html { render :new }

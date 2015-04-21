@@ -2,7 +2,7 @@ class Restaurant < ActiveRecord::Base
   belongs_to :category
   belongs_to :restaurateur
   has_many :bookings, dependent: :destroy
-  # validates :restaurateur_id, presence: true
+  validates :restaurateur_id, presence: true
   validates :category_id, presence: true
 
   geocoded_by :address

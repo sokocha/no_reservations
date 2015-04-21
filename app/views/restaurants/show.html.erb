@@ -39,7 +39,7 @@
     <% if can? :create, Booking %>
       <%= form_for Booking.new do |booking_form|%>
       
-        <span>
+        
 
         <%= booking_form.label :date %><br><br>
         <%= booking_form.text_field :date, :id => 'datepicker' %><br><br>
@@ -48,7 +48,6 @@
         <%= booking_form.label :starttime, "Start Time" %><br><br>
         <%= booking_form.time_select :starttime, :class => "start_time" %><br><br>
     
-        </span>
         
         <%= booking_form.number_field :party, autofocus: true, required: true, :placeholder => "Party Size"  %><br><br>
         
@@ -65,8 +64,6 @@
     <% end %>
   </div>
 </div>
-
-
 
 
 

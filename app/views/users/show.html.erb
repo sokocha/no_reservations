@@ -15,53 +15,54 @@
 
 
 
-
-<% if @user.restaurateur.restaurants.any? %>
-  <table class = "table-minimal">
-    <thead>
-      <tr>
-        <th> <%= @user.username %>'s Restaurants</th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td> <%= link_to restaurant.name, restaurant_path(restaurant)  %> </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-<% if can? :read, Booking %>
-  <% if @user.bookings.exists? %>
+<% if @user.restaurateur? %>
+  <% if @user.restaurateur.restaurants.any? %>
     <table class = "table-minimal">
-      <h3>My Bookings</h3>
       <thead>
         <tr>
-          <th>Restaurant</th>
-          <th>Party Size</th>
-          <th>Start Time</th>
-          <th>Status</th>
+          <th> <%= @user.username %>'s Restaurants</th>
         </tr>
       </thead>
     
       <tbody>
-        <% @user.bookings.each do |booking| %>
+        <% @restaurants.each do |restaurant| %>
         <tr>
-          <td> <%= link_to booking.restaurant.name, restaurant_path(booking.restaurant) %></td>
-          <td> <%= booking.party %> </td>
-          <td> <%= booking.starttime %> </td>
-          <td> <%= booking.status %> </td>
-          <% if can? :destroy, booking %>
-            <td> <%= link_to 'Edit Booking', edit_booking_path(booking)  %></td>
-            <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
+          <td> <%= link_to restaurant.name, restaurant_path(restaurant)  %> </td>
         </tr>
         <% end %>
       </tbody>
     </table>
+  <% end %>
+  
+  <% if can? :read, Booking %>
+    <% if @user.bookings.exists? %>
+      <table class = "table-minimal">
+        <h3>My Bookings</h3>
+        <thead>
+          <tr>
+            <th>Restaurant</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Party Size</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @user.bookings.each do |booking| %>
+          <tr>
+            <td> <%= link_to booking.restaurant.name, restaurant_path(booking.restaurant) %></td>
+            <td> <%= booking.date %> </td>
+            <td> <%= booking.starttime.strftime("%H:%m") %> </td>
+            <td> <%= booking.party %> </td>
+            <% if can? :destroy, booking %>
+              <td> <%= link_to 'Edit Booking', edit_booking_path(booking)  %></td>
+              <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
   <% end %>
 <% end %>
 

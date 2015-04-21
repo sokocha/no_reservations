@@ -7,13 +7,21 @@ class User < ActiveRecord::Base
 
   mount_uploader :user_image, UserImageUploader
 
-  # validates_presence_of :username
+  validates_presence_of :username
 
 
 
 
   def role?(role_to_compare)
     self.role.to_s == role_to_compare.to_s
+  end
+
+  def restaurateur?
+    if self.restaurateur != nil
+      true
+    else
+      false
+    end
   end
 
 
