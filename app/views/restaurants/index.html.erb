@@ -22,7 +22,7 @@
         <td> <%= link_to image_tag(restaurant.category.category_image.thumb.url), category_path(restaurant.category)  %> </td>
         <td> <%= link_to restaurant.category.name , category_path(restaurant.category)  %> </td>
         <td><%= truncate(restaurant.description, :length => 65) %></td>
-        <td><%= link_to restaurant.restaurateur.user.username, user_path(restaurant.restaurateur.user) %></td>
+        
 
         <% if can? :update, Restaurant %>
           <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>

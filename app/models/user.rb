@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :user_image, UserImageUploader
 
-  validates_presence_of :username
+  # validates_presence_of :username
 
 
 

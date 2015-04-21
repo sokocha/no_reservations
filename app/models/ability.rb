@@ -15,7 +15,7 @@ class Ability
         # can manage restaurateur, if user == restaurateur.user
 
         cannot :update, Category
-        cannot :destroy, Category
+        # cannot :destroy, Category
         cannot :create, Category
         can :read, Category
         

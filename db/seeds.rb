@@ -9,26 +9,26 @@
 
 
 
-
+User.delete_all
 Booking.delete_all
 Category.delete_all
 Restaurant.delete_all
-User.delete_all
 
 
-admin = User.create(username: 'okochito', role: 'admin', email: 'admin@gmail.com', password: 'password', remote_user_image_url:'https://www.placecage.com/g/200/300')
 
-user1 = User.create(username: 'chefo', email: 'user1@gmail.com', password: 'password', remote_user_image_url: 'https://www.placecage.com/c/200/300')
+admin = User.create(username: 'okochito', role: 'admin', email: 'admin@gmail.com', password: 'password', remote_user_image_url:'http://www.placecage.com/g/200/300')
 
-user2 = User.create(username: 'curryGod', email: 'user2@gmail.com', password: 'password', remote_user_image_url: 'https://www.stevensegallery.com/200/300')
+user1 = User.create(username: 'chefo', email: 'user1@gmail.com', password: 'password', remote_user_image_url: 'http://www.placecage.com/c/200/300')
 
-user3 = User.create(username: 'SkinnyChef', email: 'user3@gmail.com', password: 'password', remote_user_image_url: 'https://www.placecage.com/200/300')
+user2 = User.create(username: 'curryGod', email: 'user2@gmail.com', password: 'password', remote_user_image_url: 'http://www.stevensegallery.com/200/300')
+
+user3 = User.create(username: 'SkinnyChef', email: 'user3@gmail.com', password: 'password', remote_user_image_url: 'http://www.placecage.com/200/300')
 
 user4 = User.create(username: 'Garlic+Onions', email: 'user4@gmail.com', password: 'password', remote_user_image_url:'https://lorempixel.com/400/200/sports/1/')
 
-user5 = User.create(username: 'Lola', email: 'user5@gmail.com', password: 'password', remote_user_image_url: 'https://lorempixel.com/400/200/sports/')
+user5 = User.create(username: 'Lola', email: 'user5@gmail.com', password: 'password', remote_user_image_url: 'http://lorempixel.com/400/200/sports/')
 
-user6 = User.create(username: 'Zed', email: 'user6@gmail.com', password: 'password', remote_user_image_url: 'https://lorempixel.com/400/200/sports/Dummy-Text/')
+user6 = User.create(username: 'Zed', email: 'user6@gmail.com', password: 'password', remote_user_image_url: 'http://lorempixel.com/400/200/sports/Dummy-Text/')
 
 
 admin_restaurateur = Restaurateur.create!(user_id: admin.id)
@@ -42,15 +42,15 @@ user6_restaurateur = Restaurateur.create!(user_id: user6.id)
 
 
 
-american = Category.create!(name: 'American', remote_category_image_url: 'https://flaglane.com/download/american-flag/american-flag-medium.jpg', quote: "I am proud to be an American. Because an American can eat anything on the face of this earth as long as he has two pieces of bread. - Bill Cosby" );
-brazilian = Category.create!(name: 'Brazilian', remote_category_image_url: 'https://flaglane.com/download/brazilian-flag/brazilian-flag-medium.jpg', quote: "A fome é o melhor tempero. Hunger is the best seasoning. - Unknown ");
-chinese = Category.create!(name:'Chinese', remote_category_image_url: 'https://flaglane.com/download/chinese-flag/chinese-flag-medium.jpg', quote: "Anything that walks, swims, crawls, or flies with its back to heaven is edible -Eileen Yin-Fei Lo");
-french = Category.create!(name: 'French', remote_category_image_url: 'https://flaglane.com/download/french-flag/french-flag-medium.jpg', quote: "Bouillabaisse is only good because cooked by the French, who, if they cared to try, could produce an excellent and nutritious substitute out of cigar stumps and empty matchboxes -Norman Douglas, British novelist (1868-1952)");
-korean = Category.create!(name: 'Korean', remote_category_image_url: 'https://flaglane.com/download/south-korean-flag/south-korean-flag-medium.jpg', quote: "I definitely love kimchi. The biggest influence that eating so much Korean food growing up had on me was that I have no limit for spiciness. The hotter the better. - Patrick Stump");
-nigerian = Category.create!(name: 'Nigerian', remote_category_image_url: 'https://flaglane.com/download/nigerian-flag/nigerian-flag-medium.jpg', quote: "Any man who drinks alomo bitters without squeezing up his face, is capable of murder - Obasanjo (1999)");
-jamaican = Category.create!(name: 'Jamaican', remote_category_image_url: 'https://flaglane.com/download/jamaican-flag/jamaican-flag-medium.jpg', quote: "I grew up with coconuts as the main flavor in food in Jamaica. It's part of our culture. - Ziggy Marley");
-japanese = Category.create!(name: 'Japanese', remote_category_image_url: 'https://flaglane.com/download/japanese-flag/japanese-flag-medium.jpg', quote: "Japan is the most intoxicating place for me. In Kyoto, there's an inn called the Tawaraya which is quite extraordinary. The Japanese culture fascinates me: the food, the dress, the manners and the traditions. It's the travel experience that has moved me the most. - Roman Coppola");
-italian = Category.create!(name: 'Italian', remote_category_image_url: 'https://flaglane.com/download/italian-flag/italian-flag-medium.jpg', quote: "Life is a combination of magic and pasta. - Federico Fellini");
+american = Category.create!(name: 'American', remote_category_image_url: 'http://flaglane.com/download/american-flag/american-flag-medium.jpg', quote: "I am proud to be an American. Because an American can eat anything on the face of this earth as long as he has two pieces of bread. - Bill Cosby" );
+brazilian = Category.create!(name: 'Brazilian', remote_category_image_url: 'http://flaglane.com/download/brazilian-flag/brazilian-flag-medium.jpg', quote: "A fome é o melhor tempero. Hunger is the best seasoning. - Unknown ");
+chinese = Category.create!(name:'Chinese', remote_category_image_url: 'http://flaglane.com/download/chinese-flag/chinese-flag-medium.jpg', quote: "Anything that walks, swims, crawls, or flies with its back to heaven is edible -Eileen Yin-Fei Lo");
+french = Category.create!(name: 'French', remote_category_image_url: 'http://flaglane.com/download/french-flag/french-flag-medium.jpg', quote: "Bouillabaisse is only good because cooked by the French, who, if they cared to try, could produce an excellent and nutritious substitute out of cigar stumps and empty matchboxes -Norman Douglas, British novelist (1868-1952)");
+korean = Category.create!(name: 'Korean', remote_category_image_url: 'http://flaglane.com/download/south-korean-flag/south-korean-flag-medium.jpg', quote: "I definitely love kimchi. The biggest influence that eating so much Korean food growing up had on me was that I have no limit for spiciness. The hotter the better. - Patrick Stump");
+nigerian = Category.create!(name: 'Nigerian', remote_category_image_url: 'http://flaglane.com/download/nigerian-flag/nigerian-flag-medium.jpg', quote: "Any man who drinks alomo bitters without squeezing up his face, is capable of murder - Obasanjo (1999)");
+jamaican = Category.create!(name: 'Jamaican', remote_category_image_url: 'http://flaglane.com/download/jamaican-flag/jamaican-flag-medium.jpg', quote: "I grew up with coconuts as the main flavor in food in Jamaica. It's part of our culture. - Ziggy Marley");
+japanese = Category.create!(name: 'Japanese', remote_category_image_url: 'http://flaglane.com/download/japanese-flag/japanese-flag-medium.jpg', quote: "Japan is the most intoxicating place for me. In Kyoto, there's an inn called the Tawaraya which is quite extraordinary. The Japanese culture fascinates me: the food, the dress, the manners and the traditions. It's the travel experience that has moved me the most. - Roman Coppola");
+italian = Category.create!(name: 'Italian', remote_category_image_url: 'http://flaglane.com/download/italian-flag/italian-flag-medium.jpg', quote: "Life is a combination of magic and pasta. - Federico Fellini");
 
 bogo_biri = Restaurant.create!(name: 'Bogo Biri' , description: "Traditional south-west Nigerian food" , category_id: nigerian.id , restaurateur_id: admin_restaurateur.id ,address: "9, Maitama Sule Street, Lagos");
 
