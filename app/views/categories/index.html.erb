@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% if can? :manage, Category %>
-  <%= link_to 'Add New Category', new_category_path %>
+  <p id = 'add_new_category_text' ><%= link_to 'Add New Category', new_category_path%></p>
 <% end %>
 
 <div id = "cuisine_container">
