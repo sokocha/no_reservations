@@ -29,14 +29,14 @@
       <%= image_tag(@restaurant.restaurant_image.detail.url ) %>
     </p>
   
-    <% if can? :update, Restaurant %>
+   
       <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
-    <% end %>
+ 
   </div>
 
-
+  <% if can? :create, Booking %>
   <div id = "booking_form">
-    <% if can? :create, Booking %>
+    
       <%= form_for Booking.new do |booking_form|%>
       
         
@@ -61,9 +61,11 @@
           <%= booking_form.submit %>
         </div>
       <% end %>
-    <% end %>
+    
   </div>
+  <% end %>
 </div>
+
 
 
 

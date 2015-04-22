@@ -16,6 +16,7 @@ body{
     max-width: 45%;
     margin: 0 auto;
     color: black;
+    
     h1 {
       text-align: center;
       font-size: 10em;
@@ -39,6 +40,8 @@ body{
     max-width: 70%;
     max-height: 50em;
     margin-top: 40px;
+    border: 5px solid $logo_color;
+    padding: 10px;
       float:right;
       label{
         font-size: 2em;
@@ -74,4 +77,8 @@ body{
   }
 }
 
+form.new_restaurant, form.edit_restaurant{
+  border: 5px solid $logo_color;
+  padding: 20px;
+}
 

@@ -44,6 +44,11 @@ body{
       margin: 30px auto;
     }
 
+    form.edit_user, form.new_user{
+      border: 5px solid $logo_color;
+      padding: 20px;
+    }
+
 
   
 

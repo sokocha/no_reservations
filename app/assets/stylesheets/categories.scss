@@ -51,6 +51,9 @@ table{
 
 }
 
+}
 
-
+form.new_category, form.edit_category{
+  border: 5px solid $logo_color;
+  padding: 20px;
 }
