@@ -24,6 +24,23 @@ class User < ActiveRecord::Base
     end
   end
 
+  def has_restaurants?
+    if self.restaurateur.restaurants.any?
+      true
+    else
+      false
+    end
+
+  end
+
+  def has_bookings?
+    if self.bookings.exists?
+      true
+    else
+      false
+    end
+  end
+
 
 
 

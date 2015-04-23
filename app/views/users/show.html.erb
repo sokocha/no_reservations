@@ -16,7 +16,7 @@
 
 
 <% if @user.restaurateur? %>
-  <% if @user.restaurateur.restaurants.any? %>
+  <% if @user.has_restaurants? %>
     <table class = "table-minimal">
       <thead>
         <tr>
@@ -35,7 +35,7 @@
   <% end %>
   
   <% if can? :read, Booking %>
-    <% if @user.bookings.exists? %>
+    <% if @user.has_bookings? %>
       <table class = "table-minimal">
         <h3>My Bookings</h3>
         <thead>
