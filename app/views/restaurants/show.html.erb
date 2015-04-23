@@ -2,16 +2,17 @@
 
 
 <div id = "restaurant_container">
+  
   <div id = "restaurant_info">
       <p>
         <strong>Restaurant:</strong>
         <%= @restaurant.name %> by <strong><%= link_to @restaurant.restaurateur.user.username, user_path(@restaurant.restaurateur.user)   %></strong>
       </p>
 
-
     <p>
       <strong>Category:</strong>
-      <strong><%= link_to @restaurant.category.name, category_path(@restaurant.category)  %></strong>  <%= link_to image_tag(@restaurant.category.category_image.thumb.url, :class => 'tiny_flag' ), category_path(@restaurant.category) %>
+      <strong><%= link_to @restaurant.category.name, category_path(@restaurant.category)  %></strong>  
+      <%= link_to image_tag(@restaurant.category.category_image.thumb.url, :class => 'tiny_flag' ), category_path(@restaurant.category) %>
     </p>
 
     <p>
@@ -38,23 +39,19 @@
   <div id = "booking_form">
     
       <%= form_for Booking.new do |booking_form|%>
-      
-        
 
         <%= booking_form.label :date %><br><br>
         <%= booking_form.text_field :date, :id => 'datepicker' %><br><br>
 
-    
         <%= booking_form.label :starttime, "Start Time" %><br><br>
         <%= booking_form.time_select :starttime, :class => "start_time" %><br><br>
     
-        
         <%= booking_form.number_field :party, autofocus: true, required: true, :placeholder => "Party Size"  %><br><br>
         
         <%= booking_form.text_area :description, autofocus: true, :placeholder => 'List any allergies, or special requests' %><br>
     
-    
         <%= booking_form.hidden_field :restaurant_id, :value => @restaurant.id %>
+        
         <%= booking_form.hidden_field :user_id, :value => current_user.id %><br>
     
         <div class="actions">

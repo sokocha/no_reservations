@@ -3,9 +3,6 @@ class Category < ActiveRecord::Base
 
   mount_uploader :category_image, CategoryImageUploader
 
-
-
-
   def has_restaurants?
     restaurants.any?
   end
